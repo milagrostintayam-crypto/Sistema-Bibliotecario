@@ -15,17 +15,7 @@ public:
     //metodos
     void mostrarMenu();
 
-
+    int leerOpcion();
 };
-
-Menu::Menu(/* args */)
-{
-}
-
-Menu::~Menu()
-{
-}
-
-
 
 #endif
