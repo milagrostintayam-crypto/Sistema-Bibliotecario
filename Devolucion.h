@@ -1,7 +1,7 @@
 #ifndef DEVOLUCION_H
 #define DEVOLUCION_H
 
-class devolucion
+class Devolucion
 {
 private:
     /* Atributos */
