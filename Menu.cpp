@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include "Menu.h"
 #include "Usuario.h"
 #include "Usuarios.h"
@@ -69,7 +70,12 @@ void Menu::mostrarMenu(){
 int Menu::leerOpcion(){
     int op;
     cout<<"Opcion: ";
-    cin>>op;
+    
+    while (!(cin >> op)) {
+        cout<<"Entrada invalida. Intente de nuevo: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
     return op;
 }
 
@@ -78,17 +84,20 @@ void Menu::registrarUsuario(){
     string name, dni, direction;
     int phone;
 
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // 🔥 LIMPIA BUFFER
 
     cout<<"Ingrese el nombre del usuario: ";
-    cin>>name;
+    getline(cin, name);
+
     cout<<"Ingrese el dni del usuario: ";
-    cin>>dni;
+    getline(cin, dni);
+
     cout<<"Ingrese la direccion del usuario: ";
-    cin>>direction;
+    getline(cin, direction);
+
     cout<<"Ingrese el numero de celular del usuario: ";
     cin>>phone;
 
-    //falta validar datos ingresdos por el usuario
-
     usuarios.agregarUsuario(new Usuario(name, dni, phone, direction));
 }
+    
