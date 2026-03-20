@@ -11,10 +11,10 @@ Usuario::Usuario(string name, string dni, int phone, string direction){
 }
 
 void Usuario::mostrarUsuario(){
-    cout<<"Nombre: "<<name<<endl;
+    cout<<"\nNombre: "<<name<<endl;
     cout<<"DNI: "<<dni<<endl;
     cout<<"Celular: "<<phone<<endl;
-    cout<<"Direccion: "<<direction<<endl;
+    cout<<"Direccion: "<<direction<<"\n"<<endl;
 }
 
 string Usuario::getDni(){

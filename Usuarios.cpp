@@ -27,6 +27,7 @@ void Usuarios::redimensionar(){
     Usuario** nuevo = new Usuario*[capacidad];
 
     for(int i = 0; i < cantidad; i++){
+        
         nuevo[i] = lista[i];
     }
 
@@ -54,6 +55,7 @@ void Usuarios::mostrarUsuarios(){
     }
     for (int i = 0; i < cantidad; i++)
     {
+        cout<<"\nUsuario "<<i+1<<":\n";
         lista[i]->mostrarUsuario();
     }
 }
