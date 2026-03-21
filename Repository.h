@@ -2,24 +2,26 @@
 #define REPOSITORY_H
 #include <string>
 
-//#include "Libro.h"
+#include "Libro.h"
  
  //archivo de cabecera -Que puede hacer la clase (contrato)
 class Repository
 {
 private:
-    Libro**Libros;
-    int size;
-    int capacidad;
+    Libro** Libros;//puntero a un arreglo de objetos Libro- creacion de un 
+    int size; //contador de libros actuales-cuántos libros ya están ocupando espacios
+    int capacidad = 100; //cuántos espacios tiene la estantería (máximo)
 public:
     //contructor
     Repository(int capacidad);
-    ~Repository();
+    ~Repository();//liberar memoria
 
 
     //metodos
+    void cargarDatos(); // 👈 aquí simulas el vector
     void librosDisponibles();
-    void mostrarCantLibros();
     void reductrCantLibros();
 };
 #endif
+//el uso de los asteriscos* para los punteros
+//**puntero apunta a otro puntero 

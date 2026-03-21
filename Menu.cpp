@@ -3,13 +3,16 @@
 #include "Menu.h"
 #include "Usuario.h"
 #include "Usuarios.h"
+#include "Libro.h"
+#include "Libro.h"
+#include "Repository.h"
 #include <string>
 
 using namespace std;
 
 //Metodo constructor que muestra el menu de opciones al usuario y lee la opcion ingresada por el usuario
 //El constructor tambien inicializa el atributo usuarios con una capacidad inicial de 2 usuarios
-Menu::Menu() : usuarios(2){
+Menu::Menu() : usuarios(2), repo(10) {
 
     cout<<"------Bienvenido a nuestro------\n";
     do
@@ -22,7 +25,8 @@ Menu::Menu() : usuarios(2){
         switch (opcion)
         {
         case 1:
-            /* code regsitrar libros */
+            repo.cargarDatos();
+            repo.librosDisponibles();
             break;
         case 2:
             /* code mostrar usuarios */
@@ -58,7 +62,7 @@ Menu::Menu() : usuarios(2){
 //Metodo que muestra el menu de opciones al usuario
 void Menu::mostrarMenu(){
     cout<<"----SISTEMA DE BIBLIOTECA-----\n\n";
-    cout<<"1: Registrar Libros."<<endl;
+    cout<<"1: Mostrar libros disponibles ."<<endl;
     cout<<"2: Mostrar usuarios."<<endl;
     cout<<"3: Devolver Libro."<<endl;
     cout<<"4: Prestar Libro."<<endl;

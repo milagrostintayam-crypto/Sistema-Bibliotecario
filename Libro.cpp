@@ -4,9 +4,9 @@
 
 using namespace std;
 
-Libro::Libro() {}
+//Libro::Libro() {}
 Libro::Libro(int ID, std::string Titulo, int Cant) {
-    this->ID = ID;
+    this->ID = ID;//hace referencia al atributo
     this->Titulo = Titulo;
     this->Cant = Cant;
 }
