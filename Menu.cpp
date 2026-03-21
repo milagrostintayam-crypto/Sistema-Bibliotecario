@@ -12,7 +12,7 @@ using namespace std;
 
 //Metodo constructor que muestra el menu de opciones al usuario y lee la opcion ingresada por el usuario
 //El constructor tambien inicializa el atributo usuarios con una capacidad inicial de 2 usuarios
-Menu::Menu() : usuarios(2){
+Menu::Menu() : usuarios(2), repo(10) {
 
     cout<<"------Bienvenido a nuestro------\n";
     do
@@ -25,8 +25,8 @@ Menu::Menu() : usuarios(2){
         switch (opcion)
         {
         case 1:
-            
-
+            repo.cargarDatos();
+            repo.librosDisponibles();
             break;
         case 2:
             /* code mostrar usuarios */

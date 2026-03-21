@@ -20,7 +20,6 @@ public:
     //metodos
     void cargarDatos(); // 👈 aquí simulas el vector
     void librosDisponibles();
-    void mostrarCantLibros();
     void reductrCantLibros();
 };
 #endif

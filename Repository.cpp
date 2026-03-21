@@ -23,18 +23,19 @@ Repository::~Repository() { //Libera la memoria creada con new
 void Repository::cargarDatos() {
     Libros[0] = new Libro(1,"Sistemas and Software",5);
     Libros[1] = new Libro(2, "1984", 5);
-    Libros[2] = new Libro(3, "Cien años de soledad", 2);
-    Libros[3] = new Libro(4, "El Principito", 1);
+    Libros[2] = new Libro(3, "Vampirito", 2);
+    Libros[3] = new Libro(4, "El Principito", 3);
     Libros[4] = new Libro(5, "Orgullo y prejuicio", 2);
 
     size = 5; // IMPORTANTÍSIMO
 }
 
 void Repository::librosDisponibles() {
+    cout<<"====================================="<<endl;
+    cout<<"LIBROS DISPONIBLES:"<<endl;
+    cout<<"====================================="<<endl;
     for (int i = 0; i < size; i++ ) {
-        cout<<"====================================="<<endl;
-        cout<<"LIBROS DISPONIBLES:"<<endl;
-        cout<<"====================================="<<endl;
+    cout<<"_____________________________________"<<endl;
         cout<<"ID:                  "<<Libros[i]->getID()<<endl;
         cout<<"Titulo:              "<<Libros[i]->getTitulo()<<endl;
         cout<<"Cantidad disponible: "<<Libros[i]->getCant()<<endl;
