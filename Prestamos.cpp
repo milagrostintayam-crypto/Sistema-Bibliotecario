@@ -62,6 +62,7 @@ void Prestamos::mostrarPrestamos(){
 
 //Metodo que busca un usuario por su DNI y devuelve un puntero al usuario encontrado o nullptr si no se encuentra
 Prestamo* Prestamos::buscarPrestamo(string id){
+    //mejroar el filtrado de bsuqueda de prestamos para que muestre todos los que estan relacionados a un usuario o libro en especifico, actualmente solo muestra el primero que encuentra
     for (int i = 0; i < cantidad; i++)
     {
         if (lista[i]->getLibro() == id)
