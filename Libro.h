@@ -11,7 +11,7 @@ private:
     int Cant;
 public:
     //metodos
-    Libro();//constructor
+    //Libro();//constructor
     Libro(int ID, std::string Titulo, int Cant); //constructor;
 
     int getID ();
