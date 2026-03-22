@@ -21,7 +21,8 @@ public:
 
     void mostrarPrestamos();
     void agregarPrestamo(Prestamo* p);
-    Prestamo* buscarPrestamo(std::string id) ;
+    Prestamo* buscarPrestamo(const std::string& libroId, const std::string& usuarioId);
+    bool eliminarPrestamo(const std::string& libroId, const std::string& usuarioId);
 };
 
 
