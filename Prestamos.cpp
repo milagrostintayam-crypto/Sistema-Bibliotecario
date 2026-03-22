@@ -60,15 +60,29 @@ void Prestamos::mostrarPrestamos(){
     }
 }
 
-//Metodo que busca un usuario por su DNI y devuelve un puntero al usuario encontrado o nullptr si no se encuentra
-Prestamo* Prestamos::buscarPrestamo(string id){
-    //mejroar el filtrado de bsuqueda de prestamos para que muestre todos los que estan relacionados a un usuario o libro en especifico, actualmente solo muestra el primero que encuentra
+//Metodo que busca un usuario por libro y usuario y devuelve un puntero al prestamo o nullptr si no se encuentra
+Prestamo* Prestamos::buscarPrestamo(const string& libroId, const string& usuarioId){
     for (int i = 0; i < cantidad; i++)
     {
-        if (lista[i]->getLibro() == id)
+        if (lista[i]->getLibro() == libroId && lista[i]->getUsuario() == usuarioId)
         {
             return lista[i];
         }
     }
     return nullptr;
+}
+
+//Metodo que elimina un prestamo cuando se devuelve el libro
+bool Prestamos::eliminarPrestamo(const string& libroId, const string& usuarioId){
+    for (int i = 0; i < cantidad; i++) {
+        if (lista[i]->getLibro() == libroId && lista[i]->getUsuario() == usuarioId) {
+            delete lista[i];
+            for (int j = i; j < cantidad - 1; j++) {
+                lista[j] = lista[j+1];
+            }
+            cantidad--;
+            return true;
+        }
+    }
+    return false;
 }
