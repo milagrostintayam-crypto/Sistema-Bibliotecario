@@ -42,6 +42,7 @@ void Repository::librosDisponibles() {
         }
 }
 
+// NUEVO: Método para reducir stock cuando se presta un libro
 bool Repository::decrementarCantidadLibro(int libroId){
     for (int i = 0; i < size; i++) {
         if (Libros[i]->getID() == libroId) {
@@ -56,6 +57,7 @@ bool Repository::decrementarCantidadLibro(int libroId){
     return false;
 }
 
+// NUEVO: Método para aumentar stock cuando se devuelve un libro
 bool Repository::incrementarCantidadLibro(int libroId){
     for (int i = 0; i < size; i++) {
         if (Libros[i]->getID() == libroId) {
@@ -67,6 +69,7 @@ bool Repository::incrementarCantidadLibro(int libroId){
     return false;
 }
 
+// NUEVO: Método para consultar la cantidad disponible de un libro
 int Repository::obtenerCantidadLibro(int libroId) const {
     for (int i = 0; i < size; i++) {
         if (Libros[i]->getID() == libroId) {
