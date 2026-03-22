@@ -2,6 +2,8 @@
 #define MENU_H  
 #include "Usuarios.h"
 #include "Repository.h"
+#include "Prestamos.h"
+#include "Devolucion.h"
 
 class Menu
 {
@@ -10,6 +12,8 @@ private:
     int opcion;
     Usuarios usuarios;//atributo de clase
     Repository repo;//objeto creado como atributo
+    Prestamos prestamos;
+    Devolucion devolucion;
 public:
     //contructor
     Menu();

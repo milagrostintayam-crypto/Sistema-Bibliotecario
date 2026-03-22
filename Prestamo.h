@@ -4,6 +4,7 @@
 
 class Prestamo {
 private:
+//atributos
     std::string fechaPrestamo;
     std::string fechaDevolucion;
     std::string libroId;

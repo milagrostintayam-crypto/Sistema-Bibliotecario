@@ -42,23 +42,60 @@ void Repository::librosDisponibles() {
         }
 }
 
-bool Repository::prestarLibro(int LibroID) {
-    Libro* Libros = buscarLibro(int ID);
-    for 
-    if ()
-    {
-        /* code */
-    }
-    
-}
-
-Libro* Repository::buscarLibro(int ID) {
-for (int i = 0; i < size; i++)
-    {
-        if (Libros[i]->getID() == ID)
-        {
-            return Libros[i];
+// NUEVO: Método para reducir stock cuando se presta un libro
+bool Repository::decrementarCantidadLibro(int libroId){
+    for (int i = 0; i < size; i++) {
+        if (Libros[i]->getID() == libroId) {
+            if (Libros[i]->getCant() > 0) {
+                int nuevaCant = Libros[i]->getCant() - 1;
+                *Libros[i] = Libro(Libros[i]->getID(), Libros[i]->getTitulo(), nuevaCant);
+                return true;
+            }
+            return false;
         }
     }
-    return nullptr;
+    return false;
 }
+
+// NUEVO: Método para aumentar stock cuando se devuelve un libro
+bool Repository::incrementarCantidadLibro(int libroId){
+    for (int i = 0; i < size; i++) {
+        if (Libros[i]->getID() == libroId) {
+            int nuevaCant = Libros[i]->getCant() + 1;
+            *Libros[i] = Libro(Libros[i]->getID(), Libros[i]->getTitulo(), nuevaCant);
+            return true;
+        }
+    }
+    return false;
+}
+
+// NUEVO: Método para consultar la cantidad disponible de un libro
+int Repository::obtenerCantidadLibro(int libroId) const {
+    for (int i = 0; i < size; i++) {
+        if (Libros[i]->getID() == libroId) {
+            return Libros[i]->getCant();
+        }
+    }
+    return -1;
+}
+
+// bool Repository::prestarLibro(int LibroID) {
+//     Libro* Libros = buscarLibro(int ID);
+//     for 
+//     if ()
+//     {
+//         /* code */
+//     }
+    
+// }
+
+// Libro* Repository::buscarLibro(int ID) {
+// for (int i = 0; i < size; i++)
+//     {
+//         if (Libros[i]->getID() == ID)
+//         {
+//             return Libros[i];
+//         }
+//     }
+//     return nullptr;
+// }
