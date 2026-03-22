@@ -42,3 +42,37 @@ void Repository::librosDisponibles() {
         }
 }
 
+bool Repository::decrementarCantidadLibro(int libroId){
+    for (int i = 0; i < size; i++) {
+        if (Libros[i]->getID() == libroId) {
+            if (Libros[i]->getCant() > 0) {
+                int nuevaCant = Libros[i]->getCant() - 1;
+                *Libros[i] = Libro(Libros[i]->getID(), Libros[i]->getTitulo(), nuevaCant);
+                return true;
+            }
+            return false;
+        }
+    }
+    return false;
+}
+
+bool Repository::incrementarCantidadLibro(int libroId){
+    for (int i = 0; i < size; i++) {
+        if (Libros[i]->getID() == libroId) {
+            int nuevaCant = Libros[i]->getCant() + 1;
+            *Libros[i] = Libro(Libros[i]->getID(), Libros[i]->getTitulo(), nuevaCant);
+            return true;
+        }
+    }
+    return false;
+}
+
+int Repository::obtenerCantidadLibro(int libroId) const {
+    for (int i = 0; i < size; i++) {
+        if (Libros[i]->getID() == libroId) {
+            return Libros[i]->getCant();
+        }
+    }
+    return -1;
+}
+
