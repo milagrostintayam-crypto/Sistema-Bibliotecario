@@ -20,7 +20,9 @@ public:
     //metodos
     void cargarDatos(); // 👈 aquí simulas el vector
     void librosDisponibles();
-    void reductrCantLibros();
+    bool decrementarCantidadLibro(int libroId);
+    bool incrementarCantidadLibro(int libroId);
+    int obtenerCantidadLibro(int libroId) const;
 };
 #endif
 //el uso de los asteriscos* para los punteros
