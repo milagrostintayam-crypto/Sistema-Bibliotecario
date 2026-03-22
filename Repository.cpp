@@ -42,3 +42,23 @@ void Repository::librosDisponibles() {
         }
 }
 
+bool Repository::prestarLibro(int LibroID) {
+    Libro* Libros = buscarLibro(int ID);
+    for 
+    if ()
+    {
+        /* code */
+    }
+    
+}
+
+Libro* Repository::buscarLibro(int ID) {
+for (int i = 0; i < size; i++)
+    {
+        if (Libros[i]->getID() == ID)
+        {
+            return Libros[i];
+        }
+    }
+    return nullptr;
+}
