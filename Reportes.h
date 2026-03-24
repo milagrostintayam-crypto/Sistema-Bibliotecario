@@ -16,7 +16,6 @@ private:
     Usuarios* usuarios;
 public:
     Reportes(Repository* r, Prestamos* p, Devolucion* d);
-    ~Reportes();
 
     void mostrarResumenGeneral();
     void librosMasSolicitados();

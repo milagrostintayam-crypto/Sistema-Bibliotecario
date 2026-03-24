@@ -4,6 +4,7 @@
 #include "Repository.h"
 #include "Prestamos.h"
 #include "Devolucion.h"
+#include "Reportes.h"
 
 class Menu
 {
