@@ -7,6 +7,7 @@
 #include "Libro.h"
 #include "Libro.h"
 #include "Repository.h"
+#include "Reportes.h"
 #include <string>
 
 using namespace std;
@@ -22,8 +23,8 @@ void clearScreen() {
 
 //Metodo constructor que muestra el menu de opciones al usuario y lee la opcion ingresada por el usuario
 //El constructor tambien inicializa el atributo usuarios con una capacidad inicial de 2 usuarios
-Menu::Menu() : usuarios(2), repo(10), prestamos(10), devolucion(&prestamos, &repo) {
-
+//Menu::Menu() : usuarios(2), repo(10), prestamos(10), devolucion(&prestamos, &repo), reportes(&repo, &prestamos, &devolucion) {
+Menu::Menu() : usuarios(2), repo(10), prestamos(10), devolucion(&prestamos, &repo), reportes(&repo, &prestamos, &devolucion) {
     cout<<"------Bienvenido a nuestro------\n";
     do
     {
@@ -138,6 +139,8 @@ Menu::Menu() : usuarios(2), repo(10), prestamos(10), devolucion(&prestamos, &rep
         {
             clearScreen();
             cout << "===== Reportes y Estadisticas =====\n";
+            reportes.mostrarResumenGeneral();
+            cout << "=====        HISTORIAL        =====\n";
             prestamos.mostrarPrestamos();
             devolucion.mostrarHistorial();
             cout << "\nPresione Enter para continuar...";

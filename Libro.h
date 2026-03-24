@@ -17,5 +17,6 @@ public:
     int getID ();
     std::string getTitulo ();
     int getCant ();
+    void setCant(int cantidad);
 };
     #endif //finalizador

@@ -27,6 +27,8 @@ public:
     bool devolverLibro(const std::string& libroId, const std::string& usuarioId, const std::string& fecha);
     void devolverLibroConReintentos(const std::string& libroId, Usuarios* usuarios, const std::string& fecha);
     void mostrarHistorial() const;
+    int totalDevoluciones() const;
+
 };
 
 #endif

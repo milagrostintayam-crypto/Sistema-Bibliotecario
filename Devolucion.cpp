@@ -82,3 +82,8 @@ void Devolucion::devolverLibroConReintentos(const std::string& libroId, Usuarios
     }
 }
 
+int Devolucion::totalDevoluciones() const{
+    return historial.size();
+}
+
+

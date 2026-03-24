@@ -19,3 +19,6 @@ std::string Libro::getTitulo() {
 int Libro::getCant() { 
     return Cant; 
 }
+ void Libro::setCant(int cantidad){
+    this->Cant = cantidad;
+ }

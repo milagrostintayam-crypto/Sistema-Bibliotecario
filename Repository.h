@@ -24,6 +24,10 @@ public:
     bool decrementarCantidadLibro(int libroId); // Reduce stock al prestar libro
     bool incrementarCantidadLibro(int libroId); // Aumenta stock al devolver libro
     int obtenerCantidadLibro(int libroId) const; // Consulta cantidad disponible
+    //METODO: Para el uso de un analisis general en reportes
+    int totalLibros() const;
+    int contarDisponibles() const;
+    int contarAgotados() const;
 };
 #endif
 //el uso de los asteriscos* para los punteros

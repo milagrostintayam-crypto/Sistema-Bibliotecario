@@ -14,9 +14,11 @@ private:
     Repository repo;//objeto creado como atributo
     Prestamos prestamos;
     Devolucion devolucion;
+    Reportes reportes;
 public:
     //contructor
     Menu();
+    
     //destructor
     // ~Menu();
 

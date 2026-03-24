@@ -86,3 +86,7 @@ bool Prestamos::eliminarPrestamo(const string& libroId, const string& usuarioId)
     }
     return false;
 }
+//Metodo de contador
+int Prestamos::totalPrestamos() const{
+    return cantidad;//el número actual de préstamos almacenados en el arreglo
+}

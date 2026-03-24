@@ -23,6 +23,8 @@ public:
     void agregarPrestamo(Prestamo* p);
     Prestamo* buscarPrestamo(const std::string& libroId, const std::string& usuarioId);
     bool eliminarPrestamo(const std::string& libroId, const std::string& usuarioId);
+    //Metodo: Contador
+    int totalPrestamos() const;
 };
 
 

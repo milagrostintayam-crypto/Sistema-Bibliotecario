@@ -9,9 +9,9 @@ using namespace std;
 // Constructor
 Repository::Repository(int capacidad) {
     this->capacidad = capacidad; //"this apunta al objeto actual, y se usa para diferenciar atributos de parámetros."
-    this->size = 0;
+    this->size = 0;//representa cuántos libros existen actualmente en el repositorio
     Libros = new Libro*[capacidad];//libros esta recepcionando un puntero va a tomar el valor del libro que es arreglo
-}
+}//Libros es un arreglo de punteros a objetos Libro
 
 Repository::~Repository() { //Libera la memoria creada con new
     for (int i = 0; i < size; i++) {
@@ -47,8 +47,9 @@ bool Repository::decrementarCantidadLibro(int libroId){
     for (int i = 0; i < size; i++) {
         if (Libros[i]->getID() == libroId) {
             if (Libros[i]->getCant() > 0) {
-                int nuevaCant = Libros[i]->getCant() - 1;
-                *Libros[i] = Libro(Libros[i]->getID(), Libros[i]->getTitulo(), nuevaCant);
+                Libros[i]->setCant(Libros[i]->getCant() - 1);
+                // int nuevaCant = Libros[i]->getCant() - 1;
+                // *Libros[i] = Libro(Libros[i]->getID(), Libros[i]->getTitulo(), nuevaCant);
                 return true;
             }
             return false;
@@ -61,8 +62,9 @@ bool Repository::decrementarCantidadLibro(int libroId){
 bool Repository::incrementarCantidadLibro(int libroId){
     for (int i = 0; i < size; i++) {
         if (Libros[i]->getID() == libroId) {
-            int nuevaCant = Libros[i]->getCant() + 1;
-            *Libros[i] = Libro(Libros[i]->getID(), Libros[i]->getTitulo(), nuevaCant);
+            Libros[i]->setCant(Libros[i]->getCant() + 1);
+            // int nuevaCant = Libros[i]->getCant() + 1;
+            // *Libros[i] = Libro(Libros[i]->getID(), Libros[i]->getTitulo(), nuevaCant);
             return true;
         }
     }
@@ -78,24 +80,30 @@ int Repository::obtenerCantidadLibro(int libroId) const {
     }
     return -1;
 }
+//METODO: Para el uso de un analisis general en reportes
 
-// bool Repository::prestarLibro(int LibroID) {
-//     Libro* Libros = buscarLibro(int ID);
-//     for 
-//     if ()
-//     {
-//         /* code */
-//     }
-    
-// }
+int Repository::totalLibros() const {
+    return size;
+    }
 
-// Libro* Repository::buscarLibro(int ID) {
-// for (int i = 0; i < size; i++)
-//     {
-//         if (Libros[i]->getID() == ID)
-//         {
-//             return Libros[i];
-//         }
-//     }
-//     return nullptr;
-// }
+int Repository::contarDisponibles() const{
+    int cont = 0;
+
+    for (int i = 0; i < size; i++) {
+        if (Libros[i]->getCant() > 0) {
+            cont++;
+        }
+    }
+    return cont;    
+}
+
+int Repository::contarAgotados() const{
+    int cont = 0;
+
+    for (int i = 0; i < size; i++) {
+        if (Libros[i]->getCant() == 0) {
+            cont++;
+        }
+    }
+    return cont;
+}

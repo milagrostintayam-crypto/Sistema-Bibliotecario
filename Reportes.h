@@ -2,23 +2,25 @@
 #ifndef REPORTES_H
 #define REPORTES_H
 
+#include "Repository.h"
+#include "Prestamos.h"
+#include "Devolucion.h"
+#include "Usuarios.h"
+
 class Reportes
 {
 private:
-    /* data */
-    
+    Repository* repo;
+    Prestamos* prestamos;
+    Devolucion* devolucion;
+    Usuarios* usuarios;
 public:
-    Reportes(/* args */);
+    Reportes(Repository* r, Prestamos* p, Devolucion* d);
     ~Reportes();
+
+    void mostrarResumenGeneral();
+    void librosMasSolicitados();
+    void usuariosMasActivos();
+    void librosAgotados();
 };
-
-Reportes::Reportes(/* args */)
-{
-}
-
-Reportes::~Reportes()
-{
-}
-
-
 #endif
